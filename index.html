@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Danrick Salamat C. Macatanong</title>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center w-full p-4 shadow-md bg-white">
+        <!-- LogoText -->
+        <p class="text-2xl font-semibold">My Portfolio Website</p>
+        <!--Nav Bar-->
+        <nav>
+            <ul class="flex gap-6">
+                <li><a href="#" class="font-semibold hover:text-blue-500 no-underline">Home</a></li>
+                <li><a href="#" class="font-semibold hover:text-blue-500 no-underline">Education</a></li>
+                <li><a href="#" class="font-semibold hover:text-blue-500 no-underline">Projects</a></li>
+            </ul>
+        </nav>
+        <!--Contact Me Btn-->
+        <button class="bg-black font-semibold text-white rounded-xl h-10 w-32 hover:bg-blue-500 ">Contact Me</button>
+    </div>
+
+    <!--Content-->
+    <div class="flex justify-center items-center m-16 gap-4">
+        <img src="dp.jpg" alt="Danrick's Picture" class="w-68 h-72 rounded-xl shadow-2xl">
+        <div class="w-1/2 p-4 m-4">
+            <p class="font-normal mt-5">
+                I'm <span class="font-bold text-blue-500 text-2xl">Danrick Salamat C. Macatanong</span>, a passionate <span id="job-title" class="text-blue-500 transition-opacity duration-500 opacity-100 text-xl font-semibold font-mono">Software</span> Developer I specialize in delivering high-quality, scalable solutions, designing efficient workflows, and ensuring reliable performance.
+            </p>
+            <button class="bg-blue-500 text-white rounded-lg h-10 w-32 mt-6">About Me</button>
+        </div>
+    </div>
+
+    <script>
+        const jobTitles = ["Software", "UI/UX", "Backend Web", "Frontend Web"];
+        let index = 0;
+        const jobTitleElement = document.getElementById("job-title");
+
+        function changeText() {
+            jobTitleElement.classList.add("opacity-0");
+            setTimeout(() => {
+                index = (index + 1) % jobTitles.length;
+                jobTitleElement.textContent = jobTitles[index]; 
+                jobTitleElement.classList.remove("opacity-0"); 
+                jobTitleElement.classList.add("opacity-100");
+            }, 400);
+        }
+        //Interval Timer
+        setInterval(changeText, 2500); 
+    </script>
+
+</body>
+</html>
+
